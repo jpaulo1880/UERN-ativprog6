@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ativprog4</title>
-    <link rel="stylesheet" href="../ativprog4/css/styles.css">
+    <title>ativprog6</title>
+    <link rel="stylesheet" href="../ativprog6/css/styles.css">
   </head>
   <body>
     <main class="container">
       <h1>Cadastro de Cliente</h1>
-      <form action="../ativprog4/cadastraCliente.php" method="post">
+      <form
+        id="formCadastro"
+        action="../ativprog6/cadastraCliente.php"
+        method="post"
+      >
         <fieldset>
           <legend>Dados Pessoais</legend>
           <div>
@@ -49,7 +53,7 @@
               type="text"
               name="cpf"
               id="cpf"
-              pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+              pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
               title="CPF Inválido!"
            >
           </div>
@@ -75,6 +79,8 @@
               type="tel"
               name="telefone"
               id="telefone"
+              pattern="\(\d{2}\) \d{5}-\d{4}"
+              title="Insira um telefone válido!"
            >
           </div>
 
@@ -92,8 +98,8 @@
             <label>Sexo</label>
             <select class="input-group" required aria-required="true">
               <option value="" disabled hidden selected>Selecione...</option>
-              <option value="">Feminino</option>
-              <option value="">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Masculino">Masculino</option>
             </select>
           </div>
 
@@ -101,9 +107,9 @@
             <label>Estado Civil</label>
             <select class="input-group" required aria-required="true">
               <option value="" disabled hidden selected>Selecione...</option>
-              <option value="">Solteiro(a)</option>
-              <option value="">Casado(a)</option>
-              <option value="">Viúvo(a)</option>
+              <option value="Solteiro(a)">Solteiro(a)</option>
+              <option value="Casado(a)">Casado(a)</option>
+              <option value="Viúvo(a)">Viúvo(a)</option>
             </select>
           </div>
         </fieldset>
@@ -117,9 +123,10 @@
               class="input-group"
               required
               aria-required="true"
-              type="number"
+              type="text"
               name="cep"
               id="cep"
+              pattern="\d{5}-\d{3}"
            >
           </div>
 
@@ -127,9 +134,9 @@
             <label>Tipo de logradouro:</label>
             <select class="input-group" required aria-required="true">
               <option value="" hidden disabled selected>Selecione...</option>
-              <option value="">Rua</option>
-              <option value="">Avenida</option>
-              <option value="">Praça</option>
+              <option value="Rua">Rua</option>
+              <option value="Avenida">Avenida</option>
+              <option value="Praça">Praça</option>
             </select>
           </div>
 
@@ -210,6 +217,28 @@ Rouparia
               id="envioarquivo"
            >
           </div>
+
+          <div>
+            <label for="usuariologin">Usuário:</label>
+            <input
+              class="input-group"
+              type="text"
+              name="usuariologin"
+              id="usuariologin"
+              minlength="5"
+           >
+          </div>
+
+          <div>
+            <label for="senhalogin">Senha:</label>
+            <input
+              class="input-group"
+              type="password"
+              name="senhalogin"
+              id="senhalogin"
+              minlength="8"
+           >
+          </div>
         </fieldset>
 
         <div>
@@ -226,5 +255,6 @@ Rouparia
         </div>
       </form>
     </main>
+    <script src="../ativprog6/scripts/scripts.js"></script>
   </body>
 </html>
